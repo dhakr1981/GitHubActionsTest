@@ -11,7 +11,7 @@ jobs:
     - name: Use variables
       run: |
         echo "repository variable : ${{ env.REPOSITORY_VAR }}"
-        echo "organization variable : $ORGANIZATION_VAR"
+        echo "Environment variable Test : ${{ env.ENV_VAR }}"
       env:
         REPOSITORY_VAR: ${{ env.repoVar }}
         ENV_VAR: ${{ env.envVar }}
