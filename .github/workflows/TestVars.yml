@@ -1,0 +1,17 @@
+name: Test Variables
+run-name: ${{ github.actor }} Testing Variables
+on: [workflow_dispatch]
+env:
+  envVar: ${{ vars.DV1 }}
+  repoVar: ${{ vars.TOOLVAR }}
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Use variables
+      run: |
+        echo "repository variable : ${{ env.REPOSITORY_VAR }}"
+        echo "organization variable : $ORGANIZATION_VAR"
+      env:
+        REPOSITORY_VAR: ${{ env.repoVar }}
+        ENV_VAR: ${{ env.envVar }}
