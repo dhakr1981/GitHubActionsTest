@@ -9,6 +9,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: echo 'Hi ${{ env.mascot }}'  # Hi Mona
+        env:
+          mascot: Jona
       - run: echo 'Hi ${{ env.mascot }}'  # Hi Octocat
         env:
           mascot: Octocat
