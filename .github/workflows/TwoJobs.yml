@@ -13,7 +13,8 @@ jobs:
     steps:
       - run: echo "Test this second job"
   three:
-    needs: one
+    if: ${{ always() }}
+    needs: [one, two]
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this third job"
