@@ -12,3 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this second job"
+  three:
+    needs: one
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test this third job"
