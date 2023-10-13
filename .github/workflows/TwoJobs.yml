@@ -8,6 +8,7 @@ jobs:
     steps:
       - run: echo "Test this is first job"
   two:
+    needs: one
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this second job"
