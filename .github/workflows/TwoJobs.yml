@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this second job"
-      - run: ${{ needs.one.steps.st2.outputs.tag }}
+      - run: echo "${{ needs.one.steps.st2.outputs.tag }}"
   three:
     if: ${{ always() }}
     needs: [one, two]
