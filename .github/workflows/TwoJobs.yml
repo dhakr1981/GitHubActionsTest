@@ -5,6 +5,9 @@ on: [workflow_dispatch]
 jobs:
   one:
     runs-on: ubuntu-latest
+    outputs: 
+       output1: ${{ steps.st2.outputs.tag }}
+    
     steps:
       - id: st1
         run: echo "Test this is first job"
@@ -15,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this second job"
-      - run: echo "${{ needs.one.steps.st2.outputs.tag }}"
+      - run: echo "${{ needs.one.outputs.output1 }}"
   three:
     if: ${{ always() }}
     needs: [one, two]
