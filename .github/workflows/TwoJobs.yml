@@ -6,12 +6,16 @@ jobs:
   one:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Test this is first job"
+      - id: st1
+        run: echo "Test this is first job"
+      - id: st2
+        run: echo "tag=MyNameisTag" >> "$GITHUB_OUTPUT"
   two:
     needs: one
     runs-on: ubuntu-latest
     steps:
       - run: echo "Test this second job"
+      - run: ${{ needs.one.steps.st2.outputs.tag }}
   three:
     if: ${{ always() }}
     needs: [one, two]
