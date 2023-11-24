@@ -1,4 +1,4 @@
-name: Two Jobs Sample
+name: Custom2JobVarsPass
 run-name: TestVarsPassinSteps
 
 on: [workflow_dispatch]
@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs: 
        output1: ${{ steps.st2.outputs.tag }}
-    
     steps:
       - id: st2
         run: echo "tag=MyNameisTag" >> "$GITHUB_OUTPUT"
@@ -19,9 +18,4 @@ jobs:
           tag: ${{needs.one.outputs.output1}}
       - run: echo "$tag"
        
-  three:
-    if: ${{ always() }}
-    needs: [one, two]
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Test this third job"
+  
