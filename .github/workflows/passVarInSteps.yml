@@ -1,9 +1,9 @@
 name: Pass Jobs
-run-name: PassJobs_${{ env.dateFormatted }}
+run-name: PassJobs
 
 on: [workflow_dispatch]
-env:
-  dateFormatted : (get-date -Format "yyyy-MM-ddTHH-mm-ss")
+#env:
+#  dateFormatted : (get-date -Format "yyyy-MM-ddTHH-mm-ss")
 
 jobs:
   job1:
