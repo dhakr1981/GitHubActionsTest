@@ -1,5 +1,5 @@
 name: Two Jobs Sample
-run-name: SampleName
+run-name: TestVarsPassinSteps
 
 on: [workflow_dispatch]
 jobs:
