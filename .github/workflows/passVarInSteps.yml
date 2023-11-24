@@ -1,4 +1,4 @@
-name: Pass Jobs
+name: Pass Variables in Jobs
 run-name: PassJobs
 
 on: [workflow_dispatch]
